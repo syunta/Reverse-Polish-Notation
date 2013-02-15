@@ -1,16 +1,35 @@
 //逆ポーランド記法による計算プログラム//
 
 import java.util.*;
+import java.io.*;
 
 public class RPN {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException{
 		
 		//入力//
 		System.out.println("逆ポーランド記法の数式を半角入力して下さい");
 		System.out.println("※区切りにはスペースを使うこと　例）1 2 + 3 4 + *");
-		String input = new java.util.Scanner(System.in).nextLine();
-		String[] bunkai = input.split(" ");
+		System.out.println("終了にはexitを入力");
+
+		InputStream inputStream = System.in;
+		InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+		BufferedReader bufferedReader =	new BufferedReader(inputStreamReader);
+
+		
+		while (true) {
+
+			String input = bufferedReader.readLine();
+		    if (input == null) {System.exit(-1);}
+
+		    if("exit".equals(input)) {
+			    System.out.println("プログラムを終了します");
+		    	System.exit(0) ;
+		    }
+		    		    
+		    
+		    String[] bunkai = input.split(" ");
+		
 		
 		//計算//
 		LinkedList<String> stackArea = new LinkedList<String>();
@@ -22,18 +41,19 @@ public class RPN {
 		double y = 0;
 		double ans = 0;
 		
-		for (int i = 0 ; i < bunkai.length ; i++){				
-			
+		
+		for (int i = 0 ; i < bunkai.length ; i++){
+
 			if (checkDigit(bunkai[i]) == true){
 				stackArea.push(bunkai[i]);
 			}
 
 			else if (checkDigit(bunkai[i]) == false){
 				
-				x_str = checkError1(stackArea.pop());			//エラーチェック
+				x_str = checkError_1(stackArea.pop());			//エラーチェック
 				x     = Double.parseDouble(x_str);
 				
-				y_str = checkError1(stackArea.pop());			//エラーチェック
+				y_str = checkError_1(stackArea.pop());			//エラーチェック
 				y     = Double.parseDouble(y_str);
 			
 				ans = enzan(x,y,bunkai[i]);
@@ -43,11 +63,14 @@ public class RPN {
 			}
 		}
 	
-		//出力//		
-		stackArea.pop();							//エラーチェック
-		checkError2(stackArea.pop());				//
+		//出力//
+		stackArea.pop();
+		checkError_2(stackArea.pop());				//エラーチェック
 
-		System.out.println(ans);
+		PrintStream printStream = System.out;
+		printStream.println(ans);
+		
+		}
 	}	
 
 	
@@ -96,7 +119,7 @@ public class RPN {
 		System.exit(-1);		
 	}
 	
-	public static String checkError1(String str){
+	public static String checkError_1(String str){
 		
 		if (str == "エラー"){
 			System.out.println("入力が正しくありません");
@@ -105,7 +128,7 @@ public class RPN {
 		return str;
 	}
 	
-	public static void checkError2(String str){
+	public static void checkError_2(String str){
 		
 		if (str != "エラー"){
 			System.out.println("入力が正しくありません");
