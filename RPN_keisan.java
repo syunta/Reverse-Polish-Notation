@@ -60,7 +60,7 @@ public class RPN_keisan {
 
 	//Žl‘¥‰‰ŽZ//
 	public static double enzan(double x , double y , String str)throws IOException{
-		double ans = 0;
+		double ans = 1;
 		
 		switch(str){
 			case "+":
@@ -83,6 +83,12 @@ public class RPN_keisan {
 				ans = x % y;
 				break;
 			
+			case "^":
+				for (int i = 0 ; i < y ; i++){
+					ans = ans * x;
+				}
+				break;
+				
 			default:
 				error();
 		}
