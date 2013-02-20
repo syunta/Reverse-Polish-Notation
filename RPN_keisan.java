@@ -78,6 +78,10 @@ public class RPN_keisan {
 			case "/":
 				ans = x / y;
 				break;
+				
+			case "%":
+				ans = x % y;
+				break;
 			
 			default:
 				error();
