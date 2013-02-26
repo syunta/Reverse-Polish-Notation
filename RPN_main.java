@@ -1,14 +1,14 @@
 import java.io.IOException;
 
-//‹tƒ|[ƒ‰ƒ“ƒh‹L–@‚É‚æ‚éŒvZƒvƒƒOƒ‰ƒ€//
+//é€†ãƒãƒ¼ãƒ©ãƒ³ãƒ‰è¨˜æ³•ã«ã‚ˆã‚‹è¨ˆç®—ãƒ—ãƒ­ã‚°ãƒ©ãƒ //
 
 public class RPN_main {
 	
 	public static void main(String[] args) throws IOException{
 		
-		System.out.println("‹tƒ|[ƒ‰ƒ“ƒh‹L–@‚Ì”®‚ğ”¼Šp“ü—Í‚µ‚Ä‰º‚³‚¢");
-		System.out.println("¦‹æØ‚è‚É‚ÍƒXƒy[ƒX‚ğg‚¤‚±‚Æ@—áj1 2 + 3 4 + *");
-		System.out.println("I—¹‚É‚Íexit‚ğ“ü—Í");
+		System.out.println("é€†ãƒãƒ¼ãƒ©ãƒ³ãƒ‰è¨˜æ³•ã§æ•°å¼ã‚’åŠè§’å…¥åŠ›ã—ã¦ä¸‹ã•ã„");
+		System.out.println("â€»åŒºåˆ‡ã‚Šã«ã¯ã‚¹ãƒšãƒ¼ã‚¹ã‚’ä½¿ã†ã“ã¨ã€€ä¾‹ï¼‰1 2 + 3 4 + *");
+		System.out.println("çµ‚äº†ã«ã¯ã€Œexitã€ã‚’å…¥åŠ›");
 	
 		Flow();
 		
@@ -18,7 +18,7 @@ public class RPN_main {
 	public static void Flow() throws IOException{
 		while (true) {
 		
-			/*@@o—Í ( ŒvZ ( “ü—Í ) )@@*/
+			/*ã€€å‡ºåŠ›ï¼ˆã€€è¨ˆç®—ï¼ˆã€€å…¥åŠ›ï¼ˆï¼‰ã€€ï¼‰ã€€ï¼‰ã€€*/
 			RPN_output.Output ( RPN_keisan.Keisan ( RPN_input.Input() ) );
 
 		}

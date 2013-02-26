@@ -14,7 +14,7 @@ public class RPN_input {
 		if (input == null) {System.exit(-1);}
 
 	    if("exit".equals(input)) {
-		    System.out.println("ƒvƒƒOƒ‰ƒ€‚ğI—¹‚µ‚Ü‚·");
+		    System.out.println("ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’çµ‚äº†ã—ã¾ã™");
 	    	System.exit(0) ;
 	    }
 	    		    

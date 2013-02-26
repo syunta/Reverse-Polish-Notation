@@ -9,7 +9,7 @@ public class RPN_keisan {
 	    String[] bunkai = input.split(" ");
 
 		LinkedList<String> stackArea = new LinkedList<String>();
-		stackArea.push("ƒGƒ‰[");								//ƒGƒ‰[ƒ`ƒFƒbƒN—p
+		stackArea.push("ã‚¨ãƒ©ãƒ¼");								//ã‚¨ãƒ©ãƒ¼ãƒã‚§ãƒƒã‚¯ç”¨ã®ãƒ€ãƒŸãƒ¼ãƒ‡ãƒ¼ã‚¿ã‚’ãƒ—ãƒƒã‚·ãƒ¥
 	
 		String x_str;
 		String y_str;
@@ -27,10 +27,10 @@ public class RPN_keisan {
 
 			else if (checkDigit(bunkai[i]) == false){
 			
-			x_str = checkError_1(stackArea.pop());			//ƒGƒ‰[ƒ`ƒFƒbƒN
+			x_str = checkError_1(stackArea.pop());			//ã‚¨ãƒ©ãƒ¼ãƒã‚§ãƒƒã‚¯
 			x     = Double.parseDouble(x_str);
 			
-			y_str = checkError_1(stackArea.pop());			//ƒGƒ‰[ƒ`ƒFƒbƒN
+			y_str = checkError_1(stackArea.pop());			//ã‚¨ãƒ©ãƒ¼ãƒã‚§ãƒƒã‚¯
 			y     = Double.parseDouble(y_str);
 		
 			ans = enzan(x,y,bunkai[i]);
@@ -41,14 +41,14 @@ public class RPN_keisan {
 		}
 				
 		stackArea.pop();
-		checkError_2(stackArea.pop());				//ƒGƒ‰[ƒ`ƒFƒbƒN
+		checkError_2(stackArea.pop());				//ã‚¨ãƒ©ãƒ¼ãƒã‚§ãƒƒã‚¯
 		
 		return ans;
 		
 		
 	}
 	
-	//”’lƒ`ƒFƒbƒN//
+	//æ•°å€¤ãƒã‚§ãƒƒã‚¯//
 	public static boolean checkDigit(String str) {
         try {
             Double.parseDouble(str);
@@ -58,7 +58,7 @@ public class RPN_keisan {
         }
     }	
 
-	//l‘¥‰‰Z//
+	//å››å‰‡æ¼”ç®—//
 	public static double enzan(double x , double y , String str)throws IOException{
 		double ans = 1;
 		
@@ -98,16 +98,16 @@ public class RPN_keisan {
 	}
 	
 	
-	//ƒGƒ‰[ˆ—//
+	//ã‚¨ãƒ©ãƒ¼å‡¦ç†//
 	public static void error() throws IOException{		
-		System.out.println("“ü—Í‚ª³‚µ‚­‚ ‚è‚Ü‚¹‚ñ");
+		System.out.println("å…¥åŠ›ãŒæ­£ã—ãã‚ã‚Šã¾ã›ã‚“");
 		RPN_main.Flow();
 	}
 	
 	public static String checkError_1(String str)throws IOException{
 		
-		if (str == "ƒGƒ‰["){
-			System.out.println("“ü—Í‚ª³‚µ‚­‚ ‚è‚Ü‚¹‚ñ");
+		if (str == "ã‚¨ãƒ©ãƒ¼"){
+			System.out.println("å…¥åŠ›ãŒæ­£ã—ãã‚ã‚Šã¾ã›ã‚“");
 			RPN_main.Flow();
 			
 		}else{}
@@ -117,8 +117,8 @@ public class RPN_keisan {
 	
 	public static void checkError_2(String str)throws IOException{
 		
-		if (str != "ƒGƒ‰["){
-			System.out.println("“ü—Í‚ª³‚µ‚­‚ ‚è‚Ü‚¹‚ñ");
+		if (str != "ã‚¨ãƒ©ãƒ¼"){
+			System.out.println("å…¥åŠ›ãŒæ­£ã—ãã‚ã‚Šã¾ã›ã‚“");
 			RPN_main.Flow();
 		}
 		
