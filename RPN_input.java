@@ -9,19 +9,10 @@ public class RPN_input {
 		BufferedReader bufferedReader =	new BufferedReader(inputStreamReader);
 		
 		
-		String input = bufferedReader.readLine();
+		String input_string = bufferedReader.readLine();		    
 	    
-		if (input == null) {System.exit(-1);}
-
-	    if("exit".equals(input)) {
-		    System.out.println("プログラムを終了します");
-	    	System.exit(0) ;
-	    }
-	    		    
-	    
-	    return input;
+	    return input_string;
 		
-	
 	}
 	
 }

@@ -18,8 +18,15 @@ public class RPN_main {
 	public static void Flow() throws IOException{
 		while (true) {
 		
-			/*　出力（　計算（　入力（）　）　）　*/
-			RPN_output.Output ( RPN_keisan.Keisan ( RPN_input.Input() ) );
+			String input = RPN_input.Input();
+			
+			if (input == null) {System.exit(-1);}
+		    if("exit".equals(input)) {
+			    System.out.println("プログラムを終了します");
+		    	System.exit(0) ;
+		    }
+			
+			RPN_output.Output ( RPN_keisan.Keisan (input) );
 
 		}
 
