@@ -2,7 +2,7 @@ import java.io.IOException;
 
 public class RPN_keisan {
 
-	//四則演算//
+	//演算//
 	public static double enzan(double x , double y , String str)throws IOException{
 		double ans = 1;
 		
@@ -33,8 +33,6 @@ public class RPN_keisan {
 				}
 				break;
 				
-			default:
-				RPN_error.error();
 		}
 				
 		return ans;

@@ -49,12 +49,14 @@ public class RPN_main {
 
 				else if (RPN_analysis.checkDigit(bunkai[i]) == false){
 				
-				x_str = RPN_error.checkError_1(stackArea.pop());			//エラーチェック
+				x_str = RPN_error.checkError_1(stackArea.pop());			//エラーチェック１
 				x     = Double.parseDouble(x_str);
 				
-				y_str = RPN_error.checkError_1(stackArea.pop());			//エラーチェック
+				y_str = RPN_error.checkError_1(stackArea.pop());			//エラーチェック１
 				y     = Double.parseDouble(y_str);
 			
+				RPN_error.checkError_2(bunkai[i]);						//エラーチェック２
+				
 				ans = RPN_keisan.enzan(x,y,bunkai[i]);
 			
 				stackArea.push(String.valueOf(ans));
@@ -63,7 +65,7 @@ public class RPN_main {
 			}
 					
 			stackArea.pop();
-			RPN_error.checkError_2(stackArea.pop());				//エラーチェック
+			RPN_error.checkError_3(stackArea.pop());				//エラーチェック３
 		    
 			RPN_output.Output ( ans );
 
